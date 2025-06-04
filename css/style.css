@@ -819,7 +819,8 @@ footer i {
         top: 100%; /* Abaixo do cabeçalho */
         right: 0; /* Alinhado à direita */
         width: 100%; /* Largura total */
-        background-color: transparent; /* Fundo transparente */
+        background-color: rgba(255, 255, 255, 0.2); /* Fundo branco com 20% de opacidade */
+        backdrop-filter: blur(10px); /* Efeito de desfoque */
         box-shadow: var(--sombra-media); /* Sombra média */
         padding: 1rem; /* Espaçamento interno */
         display: none; /* Oculto por padrão */
