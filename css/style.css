@@ -306,7 +306,7 @@ nav {
     font-weight: 500; /* Peso da fonte */
     border-radius: var(--borda-arredondada); /* Bordas arredondadas conforme solicitado */
     transition: all var(--transicao-rapida); /* Transição suave */
-    backgroud-color: white;
+    background-color: var(--cor-fundo); /* Define a cor de fundo padrão */
 }
 
 /* Efeito hover para links do menu */
