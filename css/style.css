@@ -282,7 +282,6 @@ header .container {
 nav {
     display: flex; /* Ativa flexbox */
     align-items: center; /* Alinha verticalmente */
-    backgroundcolor: transparent;
 }
 
 /* Lista de menu */
@@ -291,7 +290,6 @@ nav {
     list-style: none; /* Remove marcadores */
     margin: 0; /* Remove margem */
     padding: 0; /* Remove padding */
-    backgroundcolor: transparent;
 }
 
 /* Itens do menu */
@@ -299,7 +297,6 @@ nav {
     margin-left: var(--espacamento-medio); /* Espaço entre itens */
     margin-top: -70px;
     width: 100px;
-    backgroundcolor: transparent;
 }
 
 /* Links do menu */
@@ -309,8 +306,6 @@ nav {
     font-weight: 500; /* Peso da fonte */
     border-radius: var(--borda-arredondada); /* Bordas arredondadas conforme solicitado */
     transition: all var(--transicao-rapida); /* Transição suave */
-    
-    
 }
 
 /* Efeito hover para links do menu */
@@ -824,7 +819,7 @@ footer i {
         top: 100%; /* Abaixo do cabeçalho */
         right: 0; /* Alinhado à direita */
         width: 100%; /* Largura total */
-        background-color: white; /* Fundo branco */
+        background-color: transparent; /* Fundo transparente */
         box-shadow: var(--sombra-media); /* Sombra média */
         padding: 1rem; /* Espaçamento interno */
         display: none; /* Oculto por padrão */
