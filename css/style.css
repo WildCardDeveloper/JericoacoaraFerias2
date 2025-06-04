@@ -301,7 +301,6 @@ nav {
 
 /* Links do menu */
 .menu a {
-    display: block; /* Torna clicável toda a área */
     padding: 8px 16px; /* Espaçamento interno */
     color: var(--cor-texto); /* Cor do texto */
     font-weight: 500; /* Peso da fonte */
