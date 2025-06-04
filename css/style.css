@@ -290,6 +290,7 @@ nav {
     list-style: none; /* Remove marcadores */
     margin: 0; /* Remove margem */
     padding: 0; /* Remove padding */
+    outline: none;
 }
 
 /* Itens do menu */
