@@ -290,7 +290,6 @@ nav {
     list-style: none; /* Remove marcadores */
     margin: 0; /* Remove margem */
     padding: 0; /* Remove padding */
-    outline: none;
 }
 
 /* Itens do menu */
@@ -785,67 +784,83 @@ footer i {
     }
 }
 
-/* Media query para dispositivos móveis */
 @media (max-width: 768px) {
     /* Ajustes para o cabeçalho */
+    header {
+        height: auto; /* Altura automática */
+        padding: 10px 0; /* Padding vertical */
+    }
+    
     header .container {
-        flex-direction: column; /* Empilha elementos */
-        text-align: center; /* Centraliza o texto */
+        flex-direction: row; /* Mantém elementos lado a lado */
+        justify-content: space-between; /* Espaço entre logo e menu */
+        align-items: center; /* Alinha verticalmente */
+        padding: 0.5rem; /* Espaçamento interno menor */
     }
     
     /* Ajustes para a logo */
     .logo {
-        margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+        max-width: 150px; /* Largura máxima menor */
+        margin: 0; /* Remove margens */
     }
     
     /* Exibe o botão de menu mobile */
     .menu-toggle {
         display: block; /* Torna visível */
-        margin-top: -270px; /* Espaço acima */
-        position: absolute;
-        margin-left: 0;
-        padding-left: 150px;
-
-        
+        margin: 0; /* Remove margens */
+        z-index: 1001; /* Acima do menu */
     }
     
     /* Ajustes para o menu */
+    nav {
+        width: 100%; /* Largura total */
+        position: relative; /* Para posicionamento do menu */
+    }
+    
     .menu {
-        display: none; /* Oculta por padrão */
+        position: absolute; /* Posicionamento absoluto */
+        top: 100%; /* Abaixo do cabeçalho */
+        right: 0; /* Alinhado à direita */
+        width: 100%; /* Largura total */
+        background-color: white; /* Fundo branco */
+        box-shadow: var(--sombra-media); /* Sombra média */
+        padding: 1rem; /* Espaçamento interno */
+        display: none; /* Oculto por padrão */
         flex-direction: column; /* Empilha itens */
-        width: 25%; /* Largura total */
-        margin-top: -90px; /* Espaço acima */
-        position: absolute; /* Posiciona abaixo do cabeçalho */
-        left: 330px; /* Alinha à esquerda */
-
+        z-index: 1000; /* Acima de outros elementos */
+        border-radius: var(--borda-arredondada); /* Bordas arredondadas */
     }
     
     /* Quando o menu está aberto */
     .menu.active {
         display: flex; /* Torna visível */
-        margin-left: -90px;
-        width: 120%; /* Largura total */
-        
     }
     
     /* Ajustes para itens do menu */
-    .menu-toggle.menu li {
-        margin: 0; /* Remove margem */
-        margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
-        margin-left: 10px;
-        
-       
+    .menu li {
+        margin: 0; /* Remove margens */
+        margin-bottom: 0.5rem; /* Espaço abaixo */
+        width: 100%; /* Largura total */
     }
     
     /* Ajustes para links do menu */
     .menu a {
         padding: 10px; /* Espaçamento interno */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Largura total */
+    }
+    
+    /* Ajustes para links destacados do menu */
+    .menu-destacado {
+        padding: 10px; /* Espaçamento interno */
+        box-shadow: none; /* Remove sombra */
     }
     
     /* Ajustes para o banner */
     .banner {
         height: 60vh; /* Altura menor */
         min-height: 400px; /* Altura mínima menor */
+        margin-top: 60px; /* Espaço para o cabeçalho fixo */
     }
     
     /* Ajustes para título do banner */
@@ -866,6 +881,23 @@ footer i {
     /* Ajustes para grid de serviços */
     .servicos-grid {
         grid-template-columns: 1fr; /* Uma coluna */
+    }
+    
+    /* Ajustes para o rodapé */
+    .footer-content {
+        flex-direction: column; /* Empilha elementos */
+        gap: var(--espacamento-grande); /* Espaço entre elementos */
+    }
+    
+    /* Ajustes para colunas do rodapé */
+    .footer-info, .footer-links, .footer-social {
+        width: 100%; /* Largura total */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    /* Ajustes para ícones de redes sociais */
+    .social-icons {
+        justify-content: center; /* Centraliza horizontalmente */
     }
 }
 
