@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!-- 
+    Documento HTML5 para o site da Jericoacoara Férias
+    Esta página representa o formulário de contato do site
+    Autor: Manus AI
+    Data: Junho 2025
+-->
+<html lang="pt-BR">
+<head>
+    <!-- Metadados básicos para configuração da página -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração para responsividade em dispositivos móveis -->
+    <meta name="description" content="Entre em contato com a Jericoacoara Férias para reservas e informações"> <!-- Descrição da página para SEO -->
+    
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Contato | Jericoacoara Férias</title>
+    
+    <!-- Vinculação do arquivo CSS externo para estilização da página -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Importação de fontes do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Importação de ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos específicos para a página de contato -->
+    <style>
+        /* Estilos para a seção de contato */
+        .contato-container {
+            padding: var(--espacamento-grande) 0;
+        }
+        
+        /* Grid de contato */
+        .contato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--espacamento-grande);
+            margin-top: var(--espacamento-grande);
+        }
+        
+        /* Formulário de contato */
+        .contato-form {
+            background-color: white;
+            border-radius: var(--borda-arredondada);
+            padding: var(--espacamento-grande);
+            box-shadow: var(--sombra-suave);
+            border: 1px solid var(--cor-borda);
+        }
+        
+        /* Título do formulário */
+        .contato-form h3 {
+            margin-bottom: var(--espacamento-medio);
+            color: var(--cor-azul-escuro);
+            text-align: center;
+        }
+        
+        /* Grupo de campos do formulário */
+        .form-group {
+            margin-bottom: var(--espacamento-medio);
+        }
+        
+        /* Rótulo do campo */
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        /* Campo de entrada */
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--borda-arredondada);
+            font-family: var(--fonte-principal);
+            font-size: var(--tamanho-texto);
+            transition: border-color var(--transicao-rapida);
+        }
+        
+        /* Efeito focus para campos */
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--cor-destaque);
+            box-shadow: 0 0 0 2px rgba(250, 147, 77, 0.2);
+        }
+        
+        /* Campo de texto multilinha */
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Campo com erro de validação */
+        .form-group input.error,
+        .form-group textarea.error,
+        .form-group select.error {
+            border-color: #e74c3c;
+        }
+        
+        /* Mensagem de erro */
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        /* Botão de envio */
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--cor-destaque);
+            color: white;
+            border: none;
+            border-radius: var(--borda-arredondada);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transicao-rapida);
+            margin-top: var(--espacamento-medio);
+        }
+        
+        /* Efeito hover para botão de envio */
+        .btn-submit:hover {
+            background-color: var(--cor-marrom);
+            transform: translateY(-2px);
+        }
+        
+        /* Informações de contato */
+        .contato-info {
+            background-color: var(--cor-azul-escuro);
+            color: white;
+            border-radius: var(--borda-arredondada);
+            padding: var(--espacamento-grande);
+            box-shadow: var(--sombra-suave);
+        }
+        
+        /* Título das informações de contato */
+        .contato-info h3 {
+            margin-bottom: var(--espacamento-medio);
+            color: white;
+            text-align: center;
+        }
+        
+        /* Lista de informações de contato */
+        .contato-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        /* Item da lista de contato */
+        .contato-lista li {
+            margin-bottom: var(--espacamento-medio);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* Ícone do item de contato */
+        .contato-lista i {
+            color: var(--cor-destaque);
+            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        /* Texto do item de contato */
+        .contato-texto {
+            flex: 1;
+        }
+        
+        /* Título do item de contato */
+        .contato-titulo {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        /* Redes sociais */
+        .contato-social {
+            margin-top: var(--espacamento-grande);
+        }
+        
+        /* Título das redes sociais */
+        .contato-social h4 {
+            margin-bottom: var(--espacamento-pequeno);
+            color: white;
+        }
+        
+        /* Ícones de redes sociais */
+        .contato-social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Link de rede social */
+        .contato-social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all var(--transicao-rapida);
+        }
+        
+        /* Efeito hover para link de rede social */
+        .contato-social-icons a:hover {
+            background-color: var(--cor-destaque);
+            transform: translateY(-3px);
+        }
+        
+        /* Mapa */
+        .mapa-container {
+            margin-top: var(--espacamento-grande);
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+        }
+        
+        /* Iframe do mapa */
+        .mapa-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            display: block;
+        }
+        
+        /* Mensagem de sucesso */
+        .success-message {
+            display: none;
+            background-color: #27ae60;
+            color: white;
+            padding: var(--espacamento-medio);
+            border-radius: var(--borda-arredondada);
+            margin-top: var(--espacamento-medio);
+            text-align: center;
+        }
+        
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .contato-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mapa-container iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho do site contendo logo e menu de navegação -->
+    <header>
+        <div class="container">
+            <!-- Logo da empresa -->
+            <div class="logo">
+                <!-- A imagem da logo será inserida via CSS para melhor controle de tamanho e posicionamento -->
+                <a href="../index.html">
+                    <img src="../img/Logo/WhatsApp Image 2025-06-03 at 10.45.06-Photoroom.png" alt="Logo Jericoacoara Férias">
+                </a>
+            </div>
+            
+            <!-- Menu de navegação principal -->
+            <nav>
+                <!-- Botão de menu mobile que aparece apenas em telas pequenas -->
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i> <!-- Ícone de hambúrguer para menu mobile -->
+                </div>
+                
+                <!-- Lista de links de navegação -->
+                <ul class="menu">
+                    <!-- Cada item do menu com fundo arredondado conforme solicitado -->
+                    <li><a href="../index.html" class="menu-destacado">Home</a></li>
+                    <li><a href="fotos.html" class="menu-destacado">Fotos</a></li>
+                    <li><a href="contato.html" class="active menu-destacado">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Banner da página -->
+        <section class="banner" style="height: 40vh; min-height: 300px;">
+            <div class="banner-content">
+                <h1>Entre em Contato</h1>
+                <p>Estamos prontos para tornar sua viagem inesquecível</p>
+            </div>
+        </section>
+        
+        <!-- Seção de contato -->
+        <section class="contato-container">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                
+                <!-- Grid de contato -->
+                <div class="contato-grid">
+                    <!-- Formulário de contato -->
+                    <div class="contato-form">
+                        <h3>Envie sua Mensagem</h3>
+                        <form id="formulario-contato">
+                            <!-- Campo de nome -->
+                            <div class="form-group">
+                                <label for="nome">Nome Completo *</label>
+                                <input type="text" id="nome" name="nome" required>
+                                <div class="error-message">Por favor, informe seu nome completo.</div>
+                            </div>
+                            
+                            <!-- Campo de email -->
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message">Por favor, informe um e-mail válido.</div>
+                            </div>
+                            
+                            <!-- Campo de telefone -->
+                            <div class="form-group">
+                                <label for="telefone">Telefone *</label>
+                                <input type="tel" id="telefone" name="telefone" required>
+                                <div class="error-message">Por favor, informe um telefone válido.</div>
+                            </div>
+                            
+                            <!-- Campo de assunto -->
+                            <div class="form-group">
+                                <label for="assunto">Assunto *</label>
+                                <select id="assunto" name="assunto" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="reserva">Reserva de Transfer</option>
+                                    <option value="passeio">Reserva de Passeio</option>
+                                    <option value="informacao">Informações</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <div class="error-message">Por favor, selecione um assunto.</div>
+                            </div>
+                            
+                            <!-- Campo de mensagem -->
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem *</label>
+                                <textarea id="mensagem" name="mensagem" required></textarea>
+                                <div class="error-message">Por favor, escreva sua mensagem.</div>
+                            </div>
+                            
+                            <!-- Botão de envio -->
+                            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        </form>
+                        
+                        <!-- Mensagem de sucesso -->
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i> Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
+                        </div>
+                    </div>
+                    
+                    <!-- Informações de contato -->
+                    <div class="contato-info">
+                        <h3>Informações de Contato</h3>
+                        <ul class="contato-lista">
+                            <!-- Item de endereço -->
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="contato-texto">
+                                    <div class="contato-titulo">Endereço</div>
+                                    <p>Jijoca de Jericoacoara - CE, 62598-000</p>
+                                </div>
+                            </li>
+                            
+                            <!-- Item de telefone -->
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div class="contato-texto">
+                                    <div class="contato-titulo">Telefone</div>
+                                    <p>(XX) XXXXX-XXXX</p>
+                                </div>
+                            </li>
+                            
+                            <!-- Item de WhatsApp -->
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <div class="contato-texto">
+                                    <div class="contato-titulo">WhatsApp</div>
+                                    <p>(XX) XXXXX-XXXX</p>
+                                </div>
+                            </li>
+                            
+                            <!-- Item de email -->
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <div class="contato-texto">
+                                    <div class="contato-titulo">E-mail</div>
+                                    <p>contato@jericoacoaraferias.com.br</p>
+                                </div>
+                            </li>
+                            
+                            <!-- Item de horário -->
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div class="contato-texto">
+                                    <div class="contato-titulo">Horário de Atendimento</div>
+                                    <p>Segunda a Domingo: 8h às 18h</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <!-- Redes sociais -->
+                        <div class="contato-social">
+                            <h4>Redes Sociais</h4>
+                            <div class="contato-social-icons">
+                                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mapa -->
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.1466067555424!2d-40.51242542412567!3d-2.7979542390512383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ea9f7d1c5c1e7d%3A0x1c8d8f5f5e8a5e5!2sJericoacoara%2C%20Jijoca%20de%20Jericoacoara%20-%20CE%2C%2062598-000!5e0!3m2!1spt-BR!2sbr!4v1622222222222!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Rodapé do site com informações de contato e links -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Coluna com informações da empresa -->
+                <div class="footer-info">
+                    <h3>Jericoacoara Férias</h3>
+                    <p>Sua melhor experiência em Jericoacoara</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jijoca de Jericoacoara - CE</p>
+                    <p><i class="fas fa-phone"></i> (XX) XXXXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> contato@jericoacoaraferias.com.br</p>
+                </div>
+                
+                <!-- Coluna com links rápidos -->
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="fotos.html">Fotos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Coluna com redes sociais -->
+                <div class="footer-social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Linha de copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jericoacoara Férias. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Vinculação do arquivo JavaScript externo -->
+    <script src="../js/script.js"></script>
+    
+    <!-- JavaScript específico para o formulário de contato -->
+    <script>
+        /**
+         * JAVASCRIPT ESPECÍFICO PARA O FORMULÁRIO DE CONTATO
+         * ========================================================================
+         * 
+         * Este script contém as funcionalidades específicas da página de contato
+         */
+        
+        // Executa quando o DOM estiver completamente carregado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa a validação do formulário
+            initFormValidation();
+        });
+        
+        /**
+         * Inicializa a validação do formulário de contato
+         * Esta função valida os campos do formulário antes do envio
+         */
+        function initFormValidation() {
+            // Seleciona o formulário
+            const form = document.getElementById('formulario-contato');
+            
+            // Adiciona um evento de envio ao formulário
+            form.addEventListener('submit', function(e) {
+                // Previne o envio padrão do formulário
+                e.preventDefault();
+                
+                // Valida o formulário
+                if (validateForm(form)) {
+                    // Se o formulário for válido, simula o envio
+                    simulateFormSubmission(form);
+                }
+            });
+            
+            // Adiciona eventos de validação em tempo real para cada campo
+            const fields = form.querySelectorAll('input, textarea, select');
+            fields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    validateField(field);
+                });
+                
+                field.addEventListener('input', function() {
+                    // Remove a classe de erro quando o usuário começa a digitar
+                    field.classList.remove('error');
+                    // Esconde a mensagem de erro
+                    const errorMessage = field.nextElementSibling;
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        /**
+         * Valida um campo específico do formulário
+         * 
+         * @param {HTMLElement} field - O campo a ser validado
+         * @return {boolean} - Verdadeiro se o campo for válido, falso caso contrário
+         */
+        function validateField(field) {
+            // Obtém a mensagem de erro associada ao campo
+            const errorMessage = field.nextElementSibling;
+            
+            // Verifica se o campo está vazio
+            if (field.required && !field.value.trim()) {
+                field.classList.add('error');
+                if (errorMessage && errorMessage.classList.contains('error-message')) {
+                    errorMessage.style.display = 'block';
+                }
+                return false;
+            }
+            
+            // Validação específica para email
+            if (field.type === 'email' && field.value.trim()) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    field.classList.add('error');
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'block';
+                    }
+                    return false;
+                }
+            }
+            
+            // Validação específica para telefone
+            if (field.id === 'telefone' && field.value.trim()) {
+                const phoneRegex = /^(\(\d{2}\)\s?)?\d{4,5}-\d{4}$/;
+                if (!phoneRegex.test(field.value)) {
+                    field.classList.add('error');
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'block';
+                    }
+                    return false;
+                }
+            }
+            
+            // Se chegou até aqui, o campo é válido
+            field.classList.remove('error');
+            if (errorMessage && errorMessage.classList.contains('error-message')) {
+                errorMessage.style.display = 'none';
+            }
+            return true;
+        }
+        
+        /**
+         * Valida o formulário completo
+         * 
+         * @param {HTMLFormElement} form - O formulário a ser validado
+         * @return {boolean} - Verdadeiro se o formulário for válido, falso caso contrário
+         */
+        function validateForm(form) {
+            // Seleciona todos os campos obrigatórios
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            // Valida cada campo
+            requiredFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+            
+            return isValid;
+        }
+        
+        /**
+         * Simula o envio do formulário
+         * Em um ambiente real, esta função seria substituída pelo envio real dos dados
+         * 
+         * @param {HTMLFormElement} form - O formulário a ser enviado
+         */
+        function simulateFormSubmission(form) {
+            // Seleciona o botão de envio
+            const submitButton = form.querySelector('.btn-submit');
+            
+            // Desabilita o botão e muda o texto para indicar processamento
+            submitButton.disabled = true;
+            submitButton.textContent = 'Enviando...';
+            
+            // Simula um atraso de processamento (2 segundos)
+            setTimeout(function() {
+                // Limpa o formulário
+                form.reset();
+                
+                // Esconde o formulário
+                form.style.display = 'none';
+                
+                // Mostra a mensagem de sucesso
+                const successMessage = document.querySelector('.success-message');
+                successMessage.style.display = 'block';
+                
+                // Rola a página para a mensagem de sucesso
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

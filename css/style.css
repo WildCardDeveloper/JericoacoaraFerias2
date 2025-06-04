@@ -1,0 +1,890 @@
+/* 
+   ========================================================================
+   ARQUIVO CSS PRINCIPAL - JERICOACOARA FÉRIAS
+   ========================================================================
+   
+   Este arquivo contém todos os estilos do site Jericoacoara Férias
+   Autor: Manus AI
+   Data: Junho 2025
+   
+   ÍNDICE:
+   1. Variáveis e Reset
+   2. Estilos Globais
+   3. Cabeçalho e Navegação
+   4. Banner Principal
+   5. Seções de Conteúdo
+   6. Cards e Elementos
+   7. Formulários
+   8. Rodapé
+   9. Responsividade
+   ========================================================================
+*/
+
+/* 
+   ========================================================================
+   1. VARIÁVEIS E RESET
+   ========================================================================
+*/
+
+/* Definição das variáveis de cores baseadas na paleta fornecida */
+:root {
+    /* Cores principais conforme especificado */
+    --cor-preto: #0c0a08;
+    --cor-creme: #fbf3dc;
+    --cor-laranja: #fa934d;
+    --cor-marrom: #996548;
+    --cor-marrom-claro: #b19782;
+    
+    /* Cores complementares */
+    --cor-azul-escuro: #002037;
+    --cor-verde-agua: #186663;
+    --cor-cinza-claro: #A6B5B4;
+    --cor-marrom-medio: #8C7361;
+    --cor-bege: #D2AF94;
+    
+    /* Variáveis para uso específico */
+    --cor-texto: var(--cor-preto);
+    --cor-texto-claro: var(--cor-creme);
+    --cor-fundo: #ffffff;
+    --cor-fundo-escuro: var(--cor-azul-escuro);
+    --cor-destaque: var(--cor-laranja);
+    --cor-link: var(--cor-verde-agua);
+    --cor-borda: var(--cor-cinza-claro);
+    
+    /* Variáveis de espaçamento */
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 2rem;
+    --espacamento-extra: 4rem;
+    
+    /* Variáveis de fonte */
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-titulos: 'Montserrat', sans-serif;
+    --tamanho-texto: 1rem;
+    --tamanho-titulo-pequeno: 1.25rem;
+    --tamanho-titulo-medio: 1.75rem;
+    --tamanho-titulo-grande: 2.5rem;
+    
+    /* Variáveis de borda e sombra */
+    --borda-arredondada: 8px;
+    --borda-arredondada-grande: 16px;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Variáveis de transição */
+    --transicao-rapida: 0.3s ease;
+    --transicao-media: 0.5s ease;
+}
+
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura/altura */
+}
+
+/* 
+   ========================================================================
+   2. ESTILOS GLOBAIS
+   ========================================================================
+*/
+
+/* Estilos básicos para o corpo do documento */
+body {
+    font-family: var(--fonte-principal); /* Aplica a fonte principal definida nas variáveis */
+    font-size: var(--tamanho-texto); /* Aplica o tamanho de texto padrão */
+    color: var(--cor-texto); /* Aplica a cor de texto padrão */
+    line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
+    background-color: var(--cor-fundo); /* Define a cor de fundo padrão */
+}
+
+/* Container para limitar a largura do conteúdo e centralizar */
+.container {
+    width: 90%; /* Largura de 90% para pequenas margens nas laterais */
+    max-width: 1200px; /* Largura máxima para telas grandes */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 var(--espacamento-medio); /* Adiciona padding interno */
+    
+}
+
+/* Estilos para links */
+a {
+    color: var(--cor-link); /* Cor padrão para links */
+    text-decoration: none; /* Remove sublinhado */
+    transition: color var(--transicao-rapida); /* Adiciona transição suave na mudança de cor */
+}
+
+/* Efeito hover para links */
+a:hover {
+    color: var(--cor-destaque); /* Muda a cor ao passar o mouse */
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos); /* Aplica a fonte de títulos */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    margin-bottom: var(--espacamento-medio); /* Adiciona espaço abaixo dos títulos */
+    color: var(--cor-azul-escuro); /* Cor específica para títulos */
+}
+
+/* Estilo específico para h1 */
+h1 {
+    font-size: var(--tamanho-titulo-grande); /* Tamanho maior para h1 */
+    line-height: 1.2; /* Altura da linha menor para títulos grandes */
+}
+
+/* Estilo específico para h2 */
+h2 {
+    font-size: var(--tamanho-titulo-medio); /* Tamanho médio para h2 */
+    position: relative; /* Posicionamento relativo para decoração */
+    padding-bottom: var(--espacamento-medio); /* Espaço para decoração abaixo */
+    text-align: center; /* Centraliza os títulos h2 */
+    margin-bottom: var(--espacamento-grande); /* Espaço maior abaixo de h2 */
+}
+
+/* Decoração para h2 - linha abaixo do título */
+h2::after {
+    content: ''; /* Conteúdo vazio para o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centralização perfeita */
+    width: 80px; /* Largura da linha */
+    height: 3px; /* Altura/espessura da linha */
+    background-color: var(--cor-destaque); /* Cor da linha */
+    border-radius: 3px; /* Arredonda as bordas da linha */
+}
+
+/* Estilo específico para h3 */
+h3 {
+    font-size: var(--tamanho-titulo-pequeno); /* Tamanho menor para h3 */
+}
+
+/* Estilo para parágrafos */
+p {
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo dos parágrafos */
+}
+
+/* Estilo para listas */
+ul, ol {
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo das listas */
+    padding-left: var(--espacamento-grande); /* Recuo à esquerda para marcadores */
+}
+
+/* Estilo para itens de lista dentro de cards de serviço */
+.servico-card ul {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding-left: 0; /* Remove o recuo à esquerda */
+}
+
+.servico-card li {
+    position: relative; /* Para posicionamento do pseudo-elemento */
+    padding-left: 1.5rem; /* Espaço para o ícone */
+    margin-bottom: 0.5rem; /* Espaço entre itens */
+}
+
+/* Adiciona um ícone personalizado antes de cada item */
+.servico-card li::before {
+    content: '✓'; /* Símbolo de check */
+    position: absolute; /* Posicionamento absoluto */
+    left: 0; /* Alinha à esquerda */
+    color: var(--cor-destaque); /* Cor do ícone */
+}
+
+/* Botão primário */
+.btn {
+    display: inline-block; /* Permite definir dimensões */
+    padding: 12px 24px; /* Espaçamento interno */
+    background-color: var(--cor-destaque); /* Cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    font-weight: 600; /* Peso da fonte semi-negrito */
+    text-align: center; /* Centraliza o texto */
+    transition: all var(--transicao-rapida); /* Transição suave */
+    border: 2px solid var(--cor-destaque); /* Borda da mesma cor do fundo */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    box-shadow: var(--sombra-suave); /* Sombra suave */
+}
+
+/* Efeito hover para botão primário */
+.btn:hover {
+    background-color: transparent; /* Fundo transparente */
+    color: var(--cor-destaque); /* Cor do texto igual à cor de destaque */
+    transform: translateY(-3px); /* Move ligeiramente para cima */
+    box-shadow: var(--sombra-media); /* Sombra mais pronunciada */
+}
+
+/* Botão secundário */
+.btn-secondary {
+    display: inline-block; /* Permite definir dimensões */
+    padding: 8px 16px; /* Espaçamento interno menor */
+    background-color: transparent; /* Fundo transparente */
+    color: var(--cor-destaque); /* Cor do texto */
+    border: 2px solid var(--cor-destaque); /* Borda colorida */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    font-weight: 500; /* Peso da fonte */
+    text-align: center; /* Centraliza o texto */
+    transition: all var(--transicao-rapida); /* Transição suave */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+
+}
+
+/* Efeito hover para botão secundário */
+.btn-secondary:hover {
+    background-color: var(--cor-destaque); /* Fundo colorido */
+    color: white; /* Texto branco */
+    transform: translateY(-2px); /* Move ligeiramente para cima */
+}
+
+/* Espaçamento padrão para seções */
+section {
+    padding: var(--espacamento-extra) 0; /* Espaçamento vertical */
+}
+
+/* 
+   ========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================
+*/
+
+/* Estilos para o cabeçalho */
+header {
+    box-shadow: var(--sombra-suave); /* Sombra suave */
+    position: fixed; /* Fixa o cabeçalho no topo */
+    width: 100%; /* Largura total */
+    height: 150px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    top: 0; /* Alinha ao topo */
+    backdrop-filter: blur(100px); /* Efeito de desfoque no fundo */
+}
+
+/* Container do cabeçalho com flexbox para alinhar logo e menu */
+header .container {
+    display: flex; /* Ativa flexbox */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center; /* Alinha verticalmente ao centro */
+    padding: 1rem; /* Espaçamento interno */
+}
+
+/* Estilos para a logo */
+.logo {
+    max-width: 300px; /* Largura máxima */
+    margin-top: -90px;
+}
+
+.logo img {
+    width: 90%; /* Preenche o container */
+    height: auto; /* Mantém proporção */
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* Estilos para a navegação */
+nav {
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Alinha verticalmente */
+}
+
+/* Lista de menu */
+.menu {
+    display: flex; /* Ativa flexbox para itens lado a lado */
+    list-style: none; /* Remove marcadores */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove padding */
+}
+
+/* Itens do menu */
+.menu li {
+    margin-left: var(--espacamento-medio); /* Espaço entre itens */
+    margin-top: -70px;
+    width: 100px;
+}
+
+/* Links do menu */
+.menu a {
+    display: block; /* Torna clicável toda a área */
+    padding: 8px 16px; /* Espaçamento interno */
+    color: var(--cor-texto); /* Cor do texto */
+    font-weight: 500; /* Peso da fonte */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas conforme solicitado */
+    transition: all var(--transicao-rapida); /* Transição suave */
+    
+    
+}
+
+/* Efeito hover para links do menu */
+.menu a:hover {
+    background-color: var(--cor-destaque); /* Fundo colorido */
+    color: white; /* Texto branco */
+}
+
+/* Link ativo do menu */
+.active {
+     /* Fundo colorido */
+    color: white; /* Texto branco */
+}
+
+/* Botão de menu mobile (hambúrguer) */
+.menu-toggle {
+    display: none; /* Oculto por padrão, aparece apenas em telas pequenas */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    cursor: pointer; /* Cursor de mão */
+    color: var(--cor-texto); /* Cor do ícone */
+}
+
+/* 
+   ========================================================================
+   4. BANNER PRINCIPAL
+   ========================================================================
+*/
+
+/* Estilos para o banner principal */
+.banner {
+    height: 80vh; /* Altura de 80% da viewport */
+    min-height: 500px; /* Altura mínima */
+    background-image: url('../img/fotos/banner-placeholder.jpg'); /* Imagem de fundo (placeholder) */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center; /* Centraliza a imagem */
+    position: relative; /* Para posicionamento de elementos filhos */
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 70px; /* Espaço para o cabeçalho fixo */ 
+    /* Overlay escuro para melhorar contraste com o texto */
+    &::before {
+        content: ''; /* Conteúdo vazio para o pseudo-elemento */
+        position: absolute; /* Posicionamento absoluto */
+        top: 0; /* Alinha ao topo */
+        left: 0; /* Alinha à esquerda */
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente */
+    }
+}
+
+/* Conteúdo do banner */
+.banner-content {
+    position: relative; /* Para ficar acima do overlay */
+    z-index: 1; /* Garante que fique acima do overlay */
+    max-width: 800px; /* Largura máxima */
+    padding: var(--espacamento-grande); /* Espaçamento interno */
+}
+
+/* Título do banner */
+.banner h1 {
+    color: white; /* Texto branco */
+    font-size: 3rem; /* Tamanho grande */
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar legibilidade */
+}
+
+/* Subtítulo do banner */
+.banner p {
+    color: white; /* Texto branco */
+    font-size: 1.25rem; /* Tamanho maior que o padrão */
+    margin-bottom: var(--espacamento-grande); /* Espaço abaixo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para melhorar legibilidade */
+}
+
+/* 
+   ========================================================================
+   5. SEÇÕES DE CONTEÚDO
+   ========================================================================
+*/
+
+/* Seção Sobre */
+.sobre {
+    background-color: var(--cor-creme); /* Fundo claro */
+    padding: var(--espacamento-extra) 0; /* Espaçamento vertical */
+}
+
+/* Container de conteúdo da seção Sobre */
+.sobre-content {
+    display: flex; /* Ativa flexbox */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: var(--espacamento-grande); /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente */
+}
+
+/* Texto da seção Sobre */
+.sobre-text {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 300px; /* Largura mínima */
+}
+
+/* Imagem da seção Sobre */
+.sobre-image {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 300px; /* Largura mínima */
+}
+
+/* Placeholder para imagem */
+.image-placeholder {
+    background-color: var(--cor-cinza-claro); /* Fundo cinza */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    height: 300px; /* Altura fixa */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Empilha elementos */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    color: white; /* Texto branco */
+}
+
+/* Ícone do placeholder */
+.image-placeholder i {
+    font-size: 3rem; /* Tamanho grande */
+    margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+}
+
+/* Seção Serviços */
+.servicos {
+    padding: var(--espacamento-extra) 0; /* Espaçamento vertical */
+}
+
+/* Grid de serviços */
+.servicos-grid {
+    display: grid; /* Ativa grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+    gap: var(--espacamento-grande); /* Espaço entre os cards */
+    margin-top: var(--espacamento-grande); /* Espaço acima */
+}
+
+/* Card de serviço */
+.servico-card {
+    background-color: white; /* Fundo branco */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    padding: var(--espacamento-grande); /* Espaçamento interno */
+    box-shadow: var(--sombra-suave); /* Sombra suave */
+    text-align: center; /* Centraliza o texto */
+    transition: transform var(--transicao-rapida); /* Transição suave */
+    border: 1px solid var(--cor-borda); /* Borda sutil */
+}
+
+/* Efeito hover para card de serviço */
+.servico-card:hover {
+    transform: translateY(-10px); /* Move para cima */
+    box-shadow: var(--sombra-media); /* Sombra mais pronunciada */
+}
+
+/* Ícone do card de serviço */
+.servico-icon {
+    font-size: 2.5rem; /* Tamanho grande */
+    color: var(--cor-destaque); /* Cor de destaque */
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo */
+}
+
+/* Título do card de serviço */
+.servico-card h3 {
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo */
+    color: var(--cor-azul-escuro); /* Cor específica */
+}
+
+/* Texto de destaque no card */
+.servico-destaque {
+    font-weight: 600; /* Peso da fonte semi-negrito */
+    color: var(--cor-destaque); /* Cor de destaque */
+    margin: var(--espacamento-medio) 0; /* Espaço acima e abaixo */
+}
+
+/* Seção Parceiros */
+.parceiros {
+    background-color: var(--cor-fundo-escuro); /* Fundo escuro */
+    padding: var(--espacamento-extra) 0; /* Espaçamento vertical */
+    color: white; /* Texto branco */
+}
+
+/* Título da seção Parceiros */
+.parceiros h2 {
+    color: white; /* Texto branco */
+}
+
+/* Slider de parceiros */
+.parceiros-slider {
+    display: flex; /* Ativa flexbox */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: var(--espacamento-grande); /* Espaço entre os itens */
+    margin-top: var(--espacamento-grande); /* Espaço acima */
+}
+
+/* Item de parceiro */
+.parceiro-item {
+    flex: 0 0 200px; /* Largura fixa, não cresce nem encolhe */
+}
+
+/* Placeholder para logo de parceiro */
+.parceiro-placeholder {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco semi-transparente */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    height: 120px; /* Altura fixa */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Empilha elementos */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    color: white; /* Texto branco */
+    transition: all var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito hover para placeholder de parceiro */
+.parceiro-placeholder:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro */
+    transform: scale(1.05); /* Aumenta ligeiramente */
+}
+
+/* Ícone do placeholder de parceiro */
+.parceiro-placeholder i {
+    font-size: 2rem; /* Tamanho grande */
+    margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+}
+
+/* Seção CTA (Call to Action) */
+.cta {
+    background-color: var(--cor-destaque); /* Fundo colorido */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: var(--espacamento-extra) 0; /* Espaçamento vertical */
+}
+
+/* Título da seção CTA */
+.cta h2 {
+    color: white; /* Texto branco */
+}
+
+/* Botão da seção CTA */
+.cta .btn {
+    background-color: white; /* Fundo branco */
+    color: var(--cor-destaque); /* Texto colorido */
+    border-color: white; /* Borda branca */
+    margin-top: var(--espacamento-medio); /* Espaço acima */
+}
+
+/* Efeito hover para botão da seção CTA */
+.cta .btn:hover {
+    background-color: transparent; /* Fundo transparente */
+    color: white; /* Texto branco */
+}
+
+/* 
+   ========================================================================
+   6. CARDS E ELEMENTOS
+   ========================================================================
+*/
+
+/* Estilos para cards genéricos */
+.card {
+    background-color: white; /* Fundo branco */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    box-shadow: var(--sombra-suave); /* Sombra suave */
+    padding: var(--espacamento-grande); /* Espaçamento interno */
+    margin-bottom: var(--espacamento-grande); /* Espaço abaixo */
+    transition: transform var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito hover para cards */
+.card:hover {
+    transform: translateY(-5px); /* Move para cima */
+    box-shadow: var(--sombra-media); /* Sombra mais pronunciada */
+}
+
+/* 
+   ========================================================================
+   7. FORMULÁRIOS
+   ========================================================================
+*/
+
+/* Estilos para formulários */
+.form-group {
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo */
+}
+
+/* Rótulos de formulário */
+label {
+    display: block; /* Ocupa toda a largura */
+    margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+    font-weight: 500; /* Peso da fonte */
+}
+
+/* Campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%; /* Largura total */
+    padding: 12px; /* Espaçamento interno */
+    border: 1px solid var(--cor-borda); /* Borda sutil */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    font-family: var(--fonte-principal); /* Mesma fonte do site */
+    font-size: var(--tamanho-texto); /* Mesmo tamanho de texto */
+    transition: border-color var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito focus para campos de entrada */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none; /* Remove contorno padrão */
+    border-color: var(--cor-destaque); /* Borda colorida */
+    box-shadow: 0 0 0 2px rgba(250, 147, 77, 0.2); /* Sombra sutil */
+}
+
+/* Área de texto */
+textarea {
+    min-height: 150px; /* Altura mínima */
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+/* Botão de envio de formulário */
+button[type="submit"] {
+    background-color: var(--cor-destaque); /* Fundo colorido */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    padding: 12px 24px; /* Espaçamento interno */
+    font-weight: 600; /* Peso da fonte semi-negrito */
+    cursor: pointer; /* Cursor de mão */
+    transition: all var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito hover para botão de envio */
+button[type="submit"]:hover {
+    background-color: var(--cor-marrom); /* Fundo mais escuro */
+    transform: translateY(-2px); /* Move para cima */
+}
+
+/* 
+   ========================================================================
+   8. RODAPÉ
+   ========================================================================
+*/
+
+/* Estilos para o rodapé */
+footer {
+    background-color: var(--cor-azul-escuro); /* Fundo escuro */
+    color: white; /* Texto branco */
+    padding: var(--espacamento-extra) 0 var(--espacamento-grande); /* Espaçamento vertical */
+}
+
+/* Conteúdo do rodapé */
+.footer-content {
+    display: flex; /* Ativa flexbox */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    gap: var(--espacamento-grande); /* Espaço entre os elementos */
+}
+
+/* Colunas do rodapé */
+.footer-info,
+.footer-links,
+.footer-social {
+    flex: 1; /* Ocupa espaço disponível */
+    min-width: 250px; /* Largura mínima */
+}
+
+/* Título das colunas do rodapé */
+footer h3 {
+    color: white; /* Texto branco */
+    margin-bottom: var(--espacamento-medio); /* Espaço abaixo */
+    position: relative; /* Para decoração */
+    padding-bottom: var(--espacamento-pequeno); /* Espaço para decoração */
+}
+
+/* Decoração para títulos do rodapé */
+footer h3::after {
+    content: ''; /* Conteúdo vazio para o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Alinha na parte inferior */
+    left: 0; /* Alinha à esquerda */
+    width: 50px; /* Largura da linha */
+    height: 2px; /* Altura/espessura da linha */
+    background-color: var(--cor-destaque); /* Cor da linha */
+}
+
+/* Ícones no rodapé */
+footer i {
+    margin-right: var(--espacamento-pequeno); /* Espaço à direita */
+    color: white; /* Cor de destaque */
+}
+
+/* Lista de links no rodapé */
+.footer-links ul {
+    list-style: none; /* Remove marcadores */
+    padding: 0; /* Remove padding */
+}
+
+/* Itens da lista de links */
+.footer-links li {
+    margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+}
+
+/* Links no rodapé */
+.footer-links a {
+    color: var(--cor-cinza-claro); /* Cor mais clara */
+    transition: color var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito hover para links no rodapé */
+.footer-links a:hover {
+    color: var(--cor-destaque); /* Cor de destaque */
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    display: flex; /* Ativa flexbox */
+    gap: var(--espacamento-pequeno); /* Espaço entre os ícones */
+}
+
+/* Links de redes sociais */
+.social-icons a {
+    display: flex; /* Ativa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 40px; /* Largura fixa */
+    height: 40px; /* Altura fixa */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco semi-transparente */
+    border-radius: 50%; /* Forma circular */
+    color: white; /* Texto branco */
+    transition: all var(--transicao-rapida); /* Transição suave */
+}
+
+/* Efeito hover para links de redes sociais */
+.social-icons a:hover {
+    background-color: var(--cor-destaque); /* Fundo colorido */
+    transform: translateY(-3px); /* Move para cima */
+}
+
+/* Linha de copyright */
+.footer-bottom {
+    text-align: center; /* Centraliza o texto */
+    margin-top: var(--espacamento-grande); /* Espaço acima */
+    padding-top: var(--espacamento-medio); /* Espaço interno acima */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    font-size: 0.9rem; /* Tamanho menor */
+}
+
+/* 
+   ========================================================================
+   9. RESPONSIVIDADE
+   ========================================================================
+*/
+
+/* Media query para tablets */
+@media (max-width: 992px) {
+    /* Ajustes para títulos */
+    h1 {
+        font-size: 2.2rem; /* Tamanho menor */
+    }
+    
+    h2 {
+        font-size: 1.5rem; /* Tamanho menor */
+    }
+    
+    /* Ajustes para o banner */
+    .banner {
+        height: 70vh; /* Altura menor */
+    }
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustes para o cabeçalho */
+    header .container {
+        flex-direction: column; /* Empilha elementos */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    /* Ajustes para a logo */
+    .logo {
+        margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+    }
+    
+    /* Exibe o botão de menu mobile */
+    .menu-toggle {
+        display: block; /* Torna visível */
+        margin-top: -270px; /* Espaço acima */
+        position: absolute;
+        margin-left: 0;
+        padding-left: 200px;
+
+        
+    }
+    
+    /* Ajustes para o menu */
+    .menu {
+        display: none; /* Oculta por padrão */
+        flex-direction: column; /* Empilha itens */
+        width: 25%; /* Largura total */
+        margin-top: -240px; /* Espaço acima */
+        position: absolute; /* Posiciona abaixo do cabeçalho */
+        left: 420px; /* Alinha à esquerda */
+
+    }
+    
+    /* Quando o menu está aberto */
+    .menu.active {
+        display: flex; /* Torna visível */
+        margin-left: -90px;
+        width: 120%; /* Largura total */
+        
+    }
+    
+    /* Ajustes para itens do menu */
+    .menu li {
+        margin: 0; /* Remove margem */
+        margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
+        margin-left: 10px;
+        
+       
+    }
+    
+    /* Ajustes para links do menu */
+    .menu a {
+        padding: 10px; /* Espaçamento interno */
+    }
+    
+    /* Ajustes para o banner */
+    .banner {
+        height: 60vh; /* Altura menor */
+        min-height: 400px; /* Altura mínima menor */
+    }
+    
+    /* Ajustes para título do banner */
+    .banner h1 {
+        font-size: 1.8rem; /* Tamanho menor */
+    }
+    
+    /* Ajustes para subtítulo do banner */
+    .banner p {
+        font-size: 1rem; /* Tamanho menor */
+    }
+    
+    /* Ajustes para seções */
+    section {
+        padding: var(--espacamento-grande) 0; /* Espaçamento vertical menor */
+    }
+    
+    /* Ajustes para grid de serviços */
+    .servicos-grid {
+        grid-template-columns: 1fr; /* Uma coluna */
+    }
+}
+
+/* Media query para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    /* Ajustes para o container */
+    .container {
+        width: 95%; /* Largura maior */
+        padding: 0 var(--espacamento-pequeno); /* Padding menor */
+    }
+    
+    /* Ajustes para título do banner */
+    .banner h1 {
+        font-size: 1.5rem; /* Tamanho menor */
+    }
+    
+    /* Ajustes para botões */
+    .btn {
+        padding: 10px 20px; /* Espaçamento interno menor */
+        font-size: 0.9rem; /* Tamanho menor */
+    }
+}
