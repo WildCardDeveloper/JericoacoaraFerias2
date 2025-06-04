@@ -828,7 +828,7 @@ footer i {
     }
     
     /* Ajustes para itens do menu */
-    .menu li {
+    .menu-toggle.menu li {
         margin: 0; /* Remove margem */
         margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
         margin-left: 10px;
