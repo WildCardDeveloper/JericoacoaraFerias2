@@ -282,7 +282,7 @@ header .container {
 nav {
     display: flex; /* Ativa flexbox */
     align-items: center; /* Alinha verticalmente */
-    float: leaft;
+    backgroundcolor: transparent;
 }
 
 /* Lista de menu */
