@@ -813,9 +813,9 @@ footer i {
         display: none; /* Oculta por padrão */
         flex-direction: column; /* Empilha itens */
         width: 25%; /* Largura total */
-        margin-top: -100px; /* Espaço acima */
+        margin-top: -90px; /* Espaço acima */
         position: absolute; /* Posiciona abaixo do cabeçalho */
-        left: 420px; /* Alinha à esquerda */
+        left: 370px; /* Alinha à esquerda */
 
     }
     
