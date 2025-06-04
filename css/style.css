@@ -813,7 +813,7 @@ footer i {
         display: none; /* Oculta por padrão */
         flex-direction: column; /* Empilha itens */
         width: 25%; /* Largura total */
-        margin-top: -240px; /* Espaço acima */
+        margin-top: -200px; /* Espaço acima */
         position: absolute; /* Posiciona abaixo do cabeçalho */
         left: 420px; /* Alinha à esquerda */
 
