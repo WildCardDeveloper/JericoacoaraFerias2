@@ -291,6 +291,7 @@ nav {
     list-style: none; /* Remove marcadores */
     margin: 0; /* Remove margem */
     padding: 0; /* Remove padding */
+    backgroundcolor: transparent;
 }
 
 /* Itens do menu */
@@ -319,7 +320,7 @@ nav {
 
 /* Link ativo do menu */
 .active {
-    
+    color: White;
 }
 
 /* Botão de menu mobile (hambúrguer) */
