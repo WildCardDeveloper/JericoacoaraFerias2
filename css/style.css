@@ -1,4 +1,4 @@
-u/*    ========================================================================
+/*    ========================================================================
    ARQUIVO CSS PRINCIPAL - JERICOACOARA FÉRIAS
    ========================================================================
    
@@ -837,7 +837,7 @@ footer i {
     /* Ajustes para itens do menu */
     .menu li {
         margin: 0; /* Remove margens */
-        margin-bottom: 0.5rem; /* Espaço abaixo */
+        margin-bottom: 1rem; /* Espaço abaixo */
         width: 100%; /* Largura total */
     }
     
