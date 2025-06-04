@@ -820,7 +820,7 @@ footer i {
     .menu {
         position: absolute; /* Posicionamento absoluto */
         top: 100%; /* Abaixo do cabeçalho */
-        right: 0; /* Alinhado à direita */
+        right: 400px; /* Alinhado à direita */
         width: 100%; /* Largura total */
         background-color: white; /* Fundo branco */
         box-shadow: var(--sombra-media); /* Sombra média */
