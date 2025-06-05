@@ -344,7 +344,6 @@ nav {
 .banner {
     height: 80vh; /* Altura de 80% da viewport */
     min-height: 500px; /* Altura mínima */
-    background-image: url('img/passeios/WhatsApp Image 2025-06-01 at 19.39.58.jpeg'); /* Imagem de fundo (placeholder) */
     background-size: cover; /* Cobre toda a área */
     background-position: center; /* Centraliza a imagem */
     position: relative; /* Para posicionamento de elementos filhos */
