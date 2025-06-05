@@ -360,7 +360,7 @@ nav {
         left: 0; /* Alinha à esquerda */
         width: 100%; /* Largura total */
         height: 100%; /* Altura total */
-        background-image: url("img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg");/* Imagem de fundo do overlay */
+        background-image: url('img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg');/* Imagem de fundo do overlay */
        
     }
 }
