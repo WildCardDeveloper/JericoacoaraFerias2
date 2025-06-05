@@ -111,7 +111,7 @@ a {
     color: var(--cor-link); /* Cor padrão para links */
     text-decoration: none; /* Remove sublinhado */
     transition: color var(--transicao-rapida); /* Adiciona transição suave na mudança de cor */
-    display: inline-block; /
+    display: inline-block; 
 }
 
 /* Efeito hover para links */
