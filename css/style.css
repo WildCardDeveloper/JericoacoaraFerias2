@@ -340,10 +340,10 @@ nav {
    ========================================================================
 */
 
-/* Estilos para o banner principal */
 .banner {
     height: 80vh; /* Altura de 80% da viewport */
     min-height: 500px; /* Altura mínima */
+    background-image: url('../img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg'); /* Imagem de fundo principal */
     background-size: cover; /* Cobre toda a área */
     background-position: center; /* Centraliza a imagem */
     position: relative; /* Para posicionamento de elementos filhos */
@@ -352,17 +352,18 @@ nav {
     justify-content: center; /* Centraliza horizontalmente */
     text-align: center; /* Centraliza o texto */
     margin-top: 70px; /* Espaço para o cabeçalho fixo */ 
-    /* Overlay escuro para melhorar contraste com o texto */
-    &::before {
-        content: ''; /* Conteúdo vazio para o pseudo-elemento */
-        position: absolute; /* Posicionamento absoluto */
-        top: 0; /* Alinha ao topo */
-        left: 0; /* Alinha à esquerda */
-        width: 100%; /* Largura total */
-        height: 100%; /* Altura total */
-        background-image: url('img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg');/* Imagem de fundo do overlay */
-       
-    }
+}
+
+/* Overlay escuro para melhorar contraste com o texto */
+.banner::before {
+    content: ''; /* Conteúdo vazio para o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente para melhorar legibilidade do texto */
+    z-index: 0; /* Garante que fique abaixo do conteúdo */
 }
 
 /* Conteúdo do banner */
@@ -371,9 +372,9 @@ nav {
     z-index: 1; /* Garante que fique acima do overlay */
     max-width: 800px; /* Largura máxima */
     padding: var(--espacamento-grande); /* Espaçamento interno */
-    background-image: url('img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg');
-
+    /* Remova a background-image daqui, pois ela já está no elemento .banner */
 }
+
 
 /* Título do banner */
 .banner h1 {
