@@ -272,7 +272,7 @@ header .container {
     /* Outras propriedades que possa ter, mas NÃO display: inline-block aqui */}
 
 .logo a {
-    display: inline-block
+    display: inline-block;
 }
 
 
