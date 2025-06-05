@@ -111,7 +111,6 @@ a {
     color: var(--cor-link); /* Cor padrão para links */
     text-decoration: none; /* Remove sublinhado */
     transition: color var(--transicao-rapida); /* Adiciona transição suave na mudança de cor */
-    display: inline-block; 
 }
 
 /* Efeito hover para links */
@@ -279,6 +278,12 @@ header .container {
     height: auto; /* Mantém proporção */
     display: block; /* Remove espaço extra abaixo da imagem */
 }
+
+/* Ajuste para área clicável da logo (link dentro da div.logo) */
+.logo a {
+    display: inline-block; /* Garante que o link ocupe apenas o espaço da imagem */
+}
+
 
 /* Estilos para a navegação */
 nav {
