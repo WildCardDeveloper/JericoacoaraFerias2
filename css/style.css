@@ -279,12 +279,6 @@ header .container {
     display: block; /* Remove espaço extra abaixo da imagem */
 }
 
-/* Ajuste para área clicável da logo (link dentro da div.logo) */
-.logo a {
-    display: inline-block; /* Garante que o link ocupe apenas o espaço da imagem */
-}
-
-
 /* Estilos para a navegação */
 nav {
     display: flex; /* Ativa flexbox */
