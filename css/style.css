@@ -840,6 +840,8 @@ footer i {
         margin: 0; /* Remove margens */
         margin-bottom: 1.5rem; /* Espaço abaixo */
         width: 100%; /* Largura total */
+        backdrop-filter: blur(10px); /* Efeito de desfoque */
+        box-shadow: var(--sombra-media); /* Sombra média */
     }
     
     /* Ajustes para links do menu */
@@ -847,8 +849,6 @@ footer i {
         padding: 10px; /* Espaçamento interno */
         text-align: center; /* Centraliza o texto */
         width: 100%; /* Largura total */
-        backdrop-filter: blur(10px); /* Efeito de desfoque */
-        box-shadow: var(--sombra-media); /* Sombra média */
     }
     
     /* Ajustes para links destacados do menu */
