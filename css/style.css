@@ -267,7 +267,7 @@ header .container {
 
 /* Estilos para a logo */
 .logo  {
-    max-width: 300px; /* Largura máxima do contêiner */
+    max-width: 150px; /* Largura máxima do contêiner */
     margin-top: -90px; /* Posicionamento do contêiner */
     /* Outras propriedades que possa ter, mas NÃO display: inline-block aqui */}
 
