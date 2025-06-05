@@ -269,6 +269,7 @@ header .container {
 .logo {
     max-width: 300px; /* Largura máxima */
     margin-top: -90px;
+    display: inline-block
 }
 
 .logo img {
