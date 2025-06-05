@@ -272,6 +272,10 @@ header .container {
     display: inline-block
 }
 
+.logo a {
+    display: inline-block; /* Garante que o link ocupe apenas o espaço da imagem */
+}
+
 .logo img {
     width: 90%; /* Preenche o container */
     height: auto; /* Mantém proporção */
