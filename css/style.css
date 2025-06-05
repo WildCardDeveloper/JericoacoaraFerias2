@@ -371,7 +371,7 @@ nav {
     z-index: 1; /* Garante que fique acima do overlay */
     max-width: 800px; /* Largura máxima */
     padding: var(--espacamento-grande); /* Espaçamento interno */
-    background-image: url("img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg");
+    background-image: url('img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg');
 
 }
 
