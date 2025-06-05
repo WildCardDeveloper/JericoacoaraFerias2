@@ -827,6 +827,7 @@ footer i {
         flex-direction: column; /* Empilha itens */
         z-index: 1000; /* Acima de outros elementos */
         border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+        height: 400px;
     }
     
     /* Quando o menu está aberto */
