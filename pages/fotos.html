@@ -96,6 +96,13 @@
             text-align: center;
             padding: 20px;
         }
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Isso fará com que a imagem cubra todo o espaço, cortando as bordas se necessário */
+            border-radius: var(--borda-arredondada); /* Para manter os cantos arredondados */
+        }
+
         
         /* Efeito hover para item da galeria */
         .galeria-item:hover {
@@ -279,7 +286,7 @@
                 <div class="galeria-grid">
                     <!-- Item da galeria - Praia 1 -->
                     <div class="galeria-item" data-categoria="praias">
-                        <img src="caminho/para/sua/imagem.jpg" alt="Praia de Jericoacoara">
+                        <img src="" alt="Praia de Jericoacoara">
                         <p>Praia de Jericoacoara</p>
                         <span class="placeholder-info">Adicione sua foto aqui</span>
                     </div>
@@ -287,38 +294,26 @@
                     <!-- Item da galeria - Lagoa 1 -->
                     <div class="galeria-item" data-categoria="lagoas">
                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
-                        <p>Lagoa do Paraíso</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
                     </div>
                     
                     <!-- Item da galeria - Duna 1 -->
                     <div class="galeria-item" data-categoria="dunas">
                         <i class="fas fa-image"></i>
-                        <p>Duna do Pôr do Sol</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
                     </div>
                     
                     <!-- Item da galeria - Passeio 1 -->
                     <div class="galeria-item" data-categoria="passeios">
                         <i class="fas fa-image"><img src="caminho/para/sua/imagem.jpg"></i>
-                        <p>Passeio de Buggy</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
                     </div>
                     
                     <!-- Item da galeria - Praia 2 -->
                     <div class="galeria-item" data-categoria="praias">
-                        <i class="fas fa-image">
-                            <img src="img/passeios/guias-info.jpeg" alt="lagoas">
-                        </i>
-                        <p>Pedra Furada</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                        <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Lagoa 2 -->
                     <div class="galeria-item" data-categoria="lagoas">
-                        <i class="fas fa-image"></i>
-                        <p>Lagoa Azul</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                        <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Duna 2 -->
@@ -330,37 +325,27 @@
                     
                     <!-- Item da galeria - Passeio 2 -->
                     <div class="galeria-item" data-categoria="passeios">
-                        <i class="fas fa-image"></i>
-                        <p>Passeio de 4x4</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Praia 3 -->
                     <div class="galeria-item" data-categoria="praias">
-                        <i class="fas fa-image"></i>
-                        <p>Praia do Preá</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Lagoa 3 -->
                     <div class="galeria-item" data-categoria="lagoas">
-                        <i class="fas fa-image"></i>
-                        <p>Lagoa de Tatajuba</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Passeio 3 -->
                     <div class="galeria-item" data-categoria="passeios">
-                        <i class="fas fa-image"></i>
-                        <p>Passeio de Quadriciclo</p>
-                        <span class="placeholder-info">Adicione sua foto aqui</span>
+                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Adicional 1 -->
                     <div class="galeria-item" data-categoria="todos">
-                        <i class="fas fa-plus-circle"></i>
-                        <p>Adicionar Nova Foto</p>
-                        <span class="placeholder-info">Clique para adicionar</span>
+                         <img src="img/passeios/guias-info.jpeg" alt="lagoas">
                     </div>
                 </div>
             </div>
