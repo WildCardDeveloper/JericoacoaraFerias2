@@ -79,10 +79,11 @@
             gap: var(--espacamento-medio);
         }
         
-        /* Item da galeria */
+      /* Item da galeria */
         .galeria-item {
             position: relative;
             overflow: hidden;
+            border-radius: var(--borda-arredondada); /* Mantenha o border-radius aqui para o contêiner */
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             aspect-ratio: 3/2; /* Proporção padrão para as imagens */
             cursor: pointer;
@@ -92,15 +93,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center; /* Isso fará com que a imagem cubra todo o espaço, cortando as bordas se necessário */
-            width: 100%;
-            height: 100%;
+            text-align: center;
+            /* REMOVA OU COMENTE ESTA LINHA SE QUISER QUE A IMAGEM PREENCHA TUDO */
+            /* padding: 20px; */ 
         }
+        
+        /* ESTE É O BLOCO CORRETO PARA ESTILIZAR A IMAGEM DENTRO DO ITEM DA GALERIA */
         .galeria-item img {
             width: 100%;
             height: 100%;
             object-fit: cover; /* Isso fará com que a imagem cubra todo o espaço, cortando as bordas se necessário */
+            border-radius: var(--borda-arredondada); /* Adicione border-radius aqui também para a imagem */
         }
+
         
         /* Efeito hover para item da galeria */
         .galeria-item:hover {
@@ -284,12 +289,12 @@
                 <div class="galeria-grid">
                     <!-- Item da galeria - Praia 1 -->
                     <div class="galeria-item" data-categoria="praias">
-                         <img src="img/WhatsApp Image 2025-06-06 at 15.51.08.jpeg" alt="Praias">
+                         <img src="../img/WhatsApp Image 2025-06-06 at 15.51.08.jpeg" alt="Praias">
                     </div>
                     
                     <!-- Item da galeria - Lagoa 1 -->
                     <div class="galeria-item" data-categoria="lagoas">
-                        <img src="img/WhatsApp Image 2025-06-06 at 15.51.08.jpeg" alt="lagoas">
+                        <img src="../img/WhatsApp Image 2025-06-06 at 15.51.08.jpeg" alt="lagoas">
                     </div>
                     
                     <!-- Item da galeria - Duna 1 -->
