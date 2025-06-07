@@ -419,7 +419,7 @@ nav {
 /* Imagem da seção Sobre */
 .sobre-image {
     flex: 1; /* Ocupa espaço disponível */
-    min-width: 50%%; /* Largura mínima */
+    min-width: 50%; /* Largura mínima */
     height: auto;
     display: block;
     border-radius: var(--borda-arredondada); /* Bordas arredondadas */
