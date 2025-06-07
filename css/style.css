@@ -425,7 +425,7 @@ nav {
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     border-radius: var(--borda-arredondada); /* Se quiser bordas arredondadas */
-    background-color: var(--cor-cinza-claro); /* Opcional: cor de fundo para o "quadradinho" */
+    background-color: var(--cor-creme); /* Opcional: cor de fundo para o "quadradinho" */
 }
 
 .sobre-image img {
