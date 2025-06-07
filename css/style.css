@@ -415,29 +415,31 @@ nav {
     flex: 1; /* Ocupa espaço disponível */
     min-width: 300px; /* Largura mínima */
 }
-
 /* Imagem da seção Sobre */
 .sobre-image {
     flex: 1; /* Ocupa espaço disponível */
-    min-width: 50%; /* Largura mínima */
-    height: auto;
-    display: block;
-    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
-    border-shadow: var(--sombra-suave); /* Bordas arredondadas */
-   
+    min-width: 300px; /* Largura mínima */
+    height: 300px; /* Adicione esta linha para definir a altura do "quadradinho" */
+    overflow: hidden; /* Garante que nada transborde do contêiner */
+    display: flex; /* Para centralizar a imagem dentro dele */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    border-radius: var(--borda-arredondada); /* Se quiser bordas arredondadas */
+    background-color: var(--cor-cinza-claro); /* Opcional: cor de fundo para o "quadradinho" */
 }
+
+.sobre-image img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+    max-height: 100%; /* Garante que a imagem não ultrapasse a altura do seu contêiner */
+    height: auto;    /* Mantém a proporção da imagem */
+    display: block;  /* Remove qualquer espaço extra abaixo da imagem */
+    object-fit: contain; /* Redimensiona a imagem para caber no contêiner, mantendo proporção */
+    object-position: center; /* Centraliza a imagem dentro do contêiner */
+}
+
 
 /* Placeholder para imagem */
 .image-placeholder {
-   background-color: var(--cor-cinza-claro); /* Fundo cinza */
-   border-radius: var(--borda-arredondada); /* Bordas arredondadas */
-   height: 300px; /* Altura fixa */
-   display: flex; /* Ativa flexbox */
-   flex-direction: column; /* Empilha elementos */
-   justify-content: center; /* Centraliza verticalmente */
-   align-items: center; /* Centraliza horizontalmente */
-   color: white; /* Texto branco */
-    
 }
 
 /* Ícone do placeholder */
