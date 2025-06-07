@@ -419,25 +419,21 @@ nav {
 /* Imagem da seção Sobre */
 .sobre-image {
     flex: 1; /* Ocupa espaço disponível */
-    min-width: 300px; /* Largura mínima */
+    min-width: 100%; /* Largura mínima */
+    height: auto;
+    display: block;
+    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
+    border-shadow: var(--sombra-suave); /* Bordas arredondadas */
+   
 }
 
 /* Placeholder para imagem */
 .image-placeholder {
-    background-color: var(--cor-cinza-claro); /* Fundo cinza */
-    border-radius: var(--borda-arredondada); /* Bordas arredondadas */
-    height: 300px; /* Altura fixa */
-    display: flex; /* Ativa flexbox */
-    flex-direction: column; /* Empilha elementos */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    color: white; /* Texto branco */
+    
 }
 
 /* Ícone do placeholder */
 .image-placeholder i {
-    font-size: 3rem; /* Tamanho grande */
-    margin-bottom: var(--espacamento-pequeno); /* Espaço abaixo */
 }
 
 /* Seção Serviços */
