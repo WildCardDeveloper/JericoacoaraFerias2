@@ -343,7 +343,7 @@ nav {
 .banner {
     height: 80vh; /* Altura de 80% da viewport */
     min-height: 500px; /* Altura mínima */
-    background-image: url('../img/passeios/8554e0da-8652-43fe-80c9-49fcb78ad0ca.jpg'); /* Imagem de fundo principal */
+    background-image: url('../img/jericoacoara-alchymist-club-1920x1080-1.jpg'); /* Imagem de fundo principal */
     background-size: cover; /* Cobre toda a área */
     background-position: center; /* Centraliza a imagem */
     position: relative; /* Para posicionamento de elementos filhos */
