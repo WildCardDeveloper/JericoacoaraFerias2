@@ -262,13 +262,12 @@ header .container {
     display: flex; /* Ativa flexbox */
     justify-content: space-between; /* Espaço entre logo e menu */
     align-items: center; /* Alinha verticalmente ao centro */
-    padding: 1rem; /* Espaçamento interno */
+    padding: 2rem 1rem; /* Espaçamento interno */
 }
 
 /* Estilos para a logo */
 .logo  {
     max-width: 300px; /* Largura máxima do contêiner */
-    margin-top: -90px; /* Posicionamento do contêiner */
     /* Outras propriedades que possa ter, mas NÃO display: inline-block aqui */
     display: inline-block;
 }
