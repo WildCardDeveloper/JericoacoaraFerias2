@@ -1,0 +1,445 @@
+/**
+ * ARQUIVO CSS DE ANIMAÇÕES - JERICOACOARA FÉRIAS
+ * ========================================================================
+ * 
+ * Este arquivo contém todas as animações do site Jericoacoara Férias
+ * Autor: Manus AI
+ * Data: Junho 2025
+ * 
+ * ÍNDICE:
+ * 1. Animações de Transição de Página
+ * 2. Animações de Chegada de Texto
+ * 3. Animações de Elementos
+ * 4. Keyframes
+ * ========================================================================
+ */
+
+/* 
+   ========================================================================
+   1. ANIMAÇÕES DE TRANSIÇÃO DE PÁGINA
+   ========================================================================
+*/
+
+/* Container principal para transições */
+.page-transition {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay de transição */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #002037, #186663);
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Estado ativo do overlay */
+.transition-overlay.active {
+    transform: translateX(0);
+}
+
+/* Animação de saída da página */
+.page-exit {
+    animation: pageSlideOut 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de entrada da página */
+.page-enter {
+    animation: pageSlideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Fade out para transição suave */
+.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* Fade in para transição suave */
+.fade-in {
+    animation: fadeIn 0.6s ease-in forwards;
+    opacity: 0;
+}
+
+/* 
+   ========================================================================
+   2. ANIMAÇÕES DE CHEGADA DE TEXTO
+   ========================================================================
+*/
+
+/* Container para texto animado */
+.animated-text {
+    overflow: hidden;
+}
+
+/* Animação de texto letra por letra */
+.letter-animation {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px) rotateX(90deg);
+    animation: letterDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de palavra por palavra */
+.word-animation {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: wordSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de linha por linha */
+.line-animation {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: lineSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de digitação (typewriter) */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #fa934d;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animação de texto com efeito de onda */
+.wave-text {
+    display: inline-block;
+}
+
+.wave-text .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: wave 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de texto com efeito de explosão */
+.explode-text {
+    display: inline-block;
+}
+
+.explode-text .letter {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+    animation: explode 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* 
+   ========================================================================
+   3. ANIMAÇÕES DE ELEMENTOS
+   ========================================================================
+*/
+
+/* Animação de entrada para cards */
+.card-enter {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    animation: cardSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de entrada para imagens */
+.image-enter {
+    opacity: 0;
+    transform: scale(1.1);
+    animation: imageZoomIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de entrada para botões */
+.button-enter {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonSlideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animação de hover para botões */
+.animated-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.animated-button:hover::before {
+    left: 100%;
+}
+
+/* 
+   ========================================================================
+   4. KEYFRAMES
+   ========================================================================
+*/
+
+/* Keyframes para transição de página - saída */
+@keyframes pageSlideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Keyframes para transição de página - entrada */
+@keyframes pageSlideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Keyframes para fade out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Keyframes para fade in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes para animação de letra */
+@keyframes letterDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotateX(90deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(10px) rotateX(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+/* Keyframes para animação de palavra */
+@keyframes wordSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes para animação de linha */
+@keyframes lineSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes para efeito de digitação */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes para cursor piscando */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fa934d;
+    }
+}
+
+/* Keyframes para efeito de onda */
+@keyframes wave {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes para efeito de explosão */
+@keyframes explode {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2) rotate(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Keyframes para entrada de card */
+@keyframes cardSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Keyframes para entrada de imagem */
+@keyframes imageZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Keyframes para entrada de botão */
+@keyframes buttonSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
+   ========================================================================
+   5. CLASSES UTILITÁRIAS PARA DELAYS
+   ========================================================================
+*/
+
+/* Delays para animações sequenciais */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
+
+/* 
+   ========================================================================
+   6. RESPONSIVIDADE
+   ========================================================================
+*/
+
+/* Reduz animações em dispositivos móveis para melhor performance */
+@media (max-width: 768px) {
+    .letter-animation,
+    .word-animation,
+    .line-animation {
+        animation-duration: 0.4s;
+    }
+    
+    .typewriter {
+        animation-duration: 2s;
+    }
+    
+    .page-exit,
+    .page-enter {
+        animation-duration: 0.4s;
+    }
+}
+
+/* Respeita preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* 
+   ========================================================================
+   7. ANIMAÇÕES DE SCROLL
+   ========================================================================
+*/
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.animate-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keyframes para animação de entrada ao rolar */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
