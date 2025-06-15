@@ -1,11 +1,6 @@
 /**
  * ARQUIVO JAVASCRIPT DE ANIMAÇÕES - JERICOACOARA FÉRIAS
  * ========================================================================
- * 
- * Este arquivo contém todas as funcionalidades de animação do site
- * Autor: Manus AI
- * Data: Junho 2025
- * 
  * ÍNDICE:
  * 1. Transições de Página
  * 2. Animações de Texto
