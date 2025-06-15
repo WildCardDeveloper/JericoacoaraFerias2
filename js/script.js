@@ -1,11 +1,6 @@
 /**
  * ARQUIVO JAVASCRIPT PRINCIPAL - JERICOACOARA FÉRIAS
  * ========================================================================
- * 
- * Este arquivo contém todas as funcionalidades JavaScript do site Jericoacoara Férias
- * Autor: Manus AI
- * Data: Junho 2025
- * 
  * ÍNDICE:
  * 1. Inicialização
  * 2. Menu Mobile
