@@ -249,7 +249,7 @@ header {
     width: 100%; /* Largura total */
     z-index: 1000; /* Garante que fique acima de outros elementos */
     top: 0; /* Alinha ao topo */
-    backdrop-filter: blur(100px); /* Efeito de desfoque no fundo */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
     padding: 1rem 0;
 }
 
